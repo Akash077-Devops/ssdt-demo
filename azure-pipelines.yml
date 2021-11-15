@@ -12,7 +12,9 @@ pool:
 steps:
 
 - script: |
-   - task: MSBuild@1
+   - task: DotNetCoreCLI@2
      inputs:
-       solution: '**/*.sln'
-  displayName: 'Run a multi-line script'
+       command: 'build'
+       projects: '**/*.sln'
+  displayName: 'build script'
+  
