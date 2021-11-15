@@ -7,15 +7,14 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
-  demands:
-  - msbuild
-  - visualstudio
+  vmImage: windows-2019
+  
 
 steps:
 
 - script: |
-   - task: VSBuild@1
+   - task: MSBuild@1
      inputs:
-       solution: '**\*.sln'
+       solution: '**/*.sln'
+       
   displayName: build file
