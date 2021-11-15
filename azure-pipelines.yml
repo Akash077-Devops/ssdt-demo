@@ -7,14 +7,12 @@ trigger:
 - master
 
 pool:
-  vmImage: vs2017-win2016
+  vmImage: windows-latest
 
 steps:
 
 - script: |
-   - task: MSBuild@1
+   - task: VSBuild@1
      inputs:
-       solution: '**/*.sln'
-       platform: 'any cpu'
-       configuration: 'Release'
+       solution: '**\*.sln'
   displayName: build file
