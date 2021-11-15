@@ -13,6 +13,8 @@ steps:
 
 - script: |
    - task: MSBuild@1
-    inputs:
-      solution: '**/*.sln'
+     inputs:
+       solution: '**/*.sln'
+       platform: 'any cpu'
+       configuration: 'Release'
   displayName: build file
